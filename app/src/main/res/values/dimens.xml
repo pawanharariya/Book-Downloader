@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--     Text sizes -->
+    <dimen name="text_extra_small">10sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_normal">14sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_extra_large">18sp</dimen>
+
+    <!--    Margins -->
+    <dimen name="margin_extra_small">8dp</dimen>
+    <dimen name="margin_small">12dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
+    <dimen name="margin_extra_large">24dp</dimen>
+
+    <!-- Paddings -->
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_start_version">4dp</dimen>
+    <dimen name="padding_end_version">2dp</dimen>
+    <dimen name="padding_vertical_version">1dp</dimen>
+
+    <dimen name="title_card_elevation">8dp</dimen>
+    <dimen name="separator_height">12dp</dimen>
+    <dimen name="separator_width">1dp</dimen>
+
+    <!-- Design Item -->
+    <dimen name="design_item_border_radius">6dp</dimen>
+    <dimen name="design_item_border_width">1dp</dimen>
+    <dimen name="design_item_recycler_divider_height">6dp</dimen>
+</resources>

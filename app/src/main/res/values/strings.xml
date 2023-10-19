@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Assignment</string>
+
+    <!--    Section Titles -->
+    <string name="section_title_2d">2D Layout/ Adaptation</string>
+    <string name="section_title_3d">3D Layout/ Adaptation</string>
+    <string name="section_title_prod">Production Files/ Artworks</string>
+
+    <string name="title_design_layout">Design Layouts</string>
+    <string name="client">Client</string>
+    <string name="job_id">Job Id</string>
+
+    <!--    Content Descriptions -->
+    <string name="cd_doc_icon">Document Icon</string>
+    <string name="cd_image_icon">Image Icon</string>
+    <string name="cd_dxf_icon">DXF Icon</string>
+    <string name="cd_design_item_options">Options</string>
+</resources>

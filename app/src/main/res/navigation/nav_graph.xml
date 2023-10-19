@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/designsFragment">
+
+    <fragment
+        android:id="@+id/designsFragment"
+        android:name="com.psh.assignment.designs.DesignsFragment"
+        android:label="fragment_designs"
+        tools:layout="@layout/fragment_designs" />
+</navigation>

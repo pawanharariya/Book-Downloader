@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="design"
+            type="com.psh.assignment.data.model.Design" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_design_item">
+
+        <ImageView
+            android:id="@+id/design_type_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_extra_small"
+            android:layout_marginStart="@dimen/margin_small"
+            app:designImage="@{design.type}"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_doc" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/design_type_image"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_toEndOf="@+id/design_type_image"
+            android:fontFamily="@font/gilroy_semi_bold"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/text_large"
+            android:text="@{design.name}"
+            tools:text="2D Electrical wiring plan" />
+
+        <TextView
+            android:id="@+id/version_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_text"
+            android:layout_alignStart="@id/title_text"
+            android:layout_marginBottom="@dimen/margin_extra_small"
+            app:designVersion="@{design.version}"
+            android:background="@drawable/bg_curved_border"
+            android:backgroundTint="@color/bg_version"
+            android:fontFamily="@font/gilroy_extra_bold"
+            android:paddingVertical="@dimen/padding_vertical_version"
+            android:paddingStart="@dimen/padding_start_version"
+            android:paddingEnd="@dimen/padding_end_version"
+            android:textColor="@color/text_version_number"
+            android:textSize="@dimen/text_extra_small"
+            tools:text="V3" />
+
+        <TextView
+            android:id="@+id/uploaded_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/version_text"
+            android:layout_marginStart="@dimen/margin_extra_small"
+            app:uploadedDate="@{design.uploadedAt}"
+            android:layout_toEndOf="@id/version_text"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/text_uploaded_date"
+            android:textSize="@dimen/text_small"
+            tools:text="Uploaded On: 12 Nov, 21 02:58Pm" />
+
+        <ImageButton
+            android:id="@+id/option_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_extra_small"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/cd_design_item_options"
+            android:src="@drawable/ic_options" />
+    </RelativeLayout>
+</layout>

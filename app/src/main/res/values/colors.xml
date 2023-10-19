@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!--     Text Colors -->
+    <color name="text_default">@color/black</color>
+    <color name="text_version_number">#EC2227</color>
+    <color name="text_uploaded_date">#667085</color>
+    <color name="text_file_count">#3D3D52</color>
+
+    <!--     Background Colors -->
+    <color name="bg_version">#FFE3E4</color>
+    <color name="bg_design_item">@color/white</color>
+    <color name="bg_file_count">#EBEBEB</color>
+    <color name="bg_title_card">@color/white</color>
+    <color name="bg_default">#F9F9F9</color>
+
+    <color name="loading_progress">#47A4AA</color>
+    <color name="design_item_border">#E4E7EC</color>
+    <color name="separator">#707070</color>
+</resources>
