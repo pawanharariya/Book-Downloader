@@ -1,4 +1,4 @@
-package com.psh.assignment.designs
+package com.psh.assignment.design
 
 import android.graphics.Rect
 import android.view.View

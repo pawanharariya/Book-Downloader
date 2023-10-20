@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/designsFragment"
-        android:name="com.psh.assignment.designs.DesignsFragment"
+        android:name="com.psh.assignment.design.DesignFragment"
         android:label="fragment_designs"
         tools:layout="@layout/fragment_designs" />
 </navigation>

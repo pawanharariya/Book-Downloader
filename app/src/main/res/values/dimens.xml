@@ -15,6 +15,7 @@
     <dimen name="margin_extra_large">24dp</dimen>
 
     <!-- Paddings -->
+    <dimen name="padding_small">12dp</dimen>
     <dimen name="padding_normal">16dp</dimen>
     <dimen name="padding_start_version">4dp</dimen>
     <dimen name="padding_end_version">2dp</dimen>

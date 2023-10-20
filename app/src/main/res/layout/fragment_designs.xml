@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:background="@color/bg_default"
         android:orientation="vertical"
-        tools:context=".designs.DesignsFragment">
+        tools:context=".design.DesignFragment">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/title_layout"
@@ -20,7 +20,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/padding_normal">
+                android:paddingHorizontal="@dimen/padding_normal"
+                android:paddingVertical="@dimen/padding_small">
 
                 <TextView
                     android:id="@+id/title"

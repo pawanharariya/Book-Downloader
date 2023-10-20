@@ -21,8 +21,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/gilroy_bold"
-            app:sectionTitle="@{section.type}"
             android:textSize="@dimen/text_extra_large"
+            android:includeFontPadding="false"
+            app:sectionTitle="@{section.type}"
             tools:text="2D Layout/ Adaptation" />
 
         <TextView
@@ -34,8 +35,7 @@
             android:background="@drawable/bg_curved_border"
             android:backgroundTint="@color/bg_file_count"
             android:fontFamily="@font/gilroy_semi_bold"
-            android:padding="4dp"
-            android:includeFontPadding="false"
+            android:paddingHorizontal="4dp"
             android:textColor="@color/text_file_count"
             android:visibility="invisible"
             app:fileCount="@{section.designList.size()}"
@@ -48,11 +48,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:backgroundTint="@android:color/transparent"
+            android:clickable="false"
+            android:rotation="-90"
             android:src="@drawable/ic_drop_down"
             tools:ignore="ContentDescription" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/designs_recycler"
+            android:id="@+id/design_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/section_title_text"
