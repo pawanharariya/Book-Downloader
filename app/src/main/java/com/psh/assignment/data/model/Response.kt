@@ -5,7 +5,7 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Response(
-//    val code: ResponseCode,
+    val code: Int,
     val message: String,
     val success: Boolean,
     val data: List<Design>

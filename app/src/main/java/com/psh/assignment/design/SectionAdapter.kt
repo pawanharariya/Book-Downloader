@@ -13,14 +13,14 @@ import com.psh.assignment.databinding.ListItemSectionBinding
 
 class SectionAdapter(
     private val sectionList: List<Section>,
-    private val onClickListener: DesignAdapter.OnClickListener
+    private val clickListener: DesignAdapter.OnClickListener
 ) : RecyclerView.Adapter<SectionAdapter.SectionViewHolder>() {
 
     inner class SectionViewHolder(private val binding: ListItemSectionBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(section: Section) {
             val resources = binding.root.resources
-            val designAdapter = DesignAdapter(onClickListener)
+            val designAdapter = DesignAdapter(clickListener)
             val designRecycler = binding.designRecycler
 
             designRecycler.apply {

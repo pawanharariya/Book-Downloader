@@ -31,12 +31,24 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/design_type_image"
             android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_toStartOf="@id/download_progress"
             android:layout_toEndOf="@+id/design_type_image"
+            android:ellipsize="end"
             android:fontFamily="@font/gilroy_semi_bold"
             android:includeFontPadding="false"
-            android:textSize="@dimen/text_large"
+            android:maxLines="1"
             android:text="@{design.name}"
+            android:textSize="@dimen/text_large"
             tools:text="2D Electrical wiring plan" />
+
+        <View
+            android:id="@+id/download_progress"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_toStartOf="@id/option_button" />
 
         <TextView
             android:id="@+id/version_text"
@@ -45,7 +57,6 @@
             android:layout_below="@id/title_text"
             android:layout_alignStart="@id/title_text"
             android:layout_marginBottom="@dimen/margin_extra_small"
-            app:designVersion="@{design.version}"
             android:background="@drawable/bg_curved_border"
             android:backgroundTint="@color/bg_version"
             android:fontFamily="@font/gilroy_extra_bold"
@@ -54,6 +65,7 @@
             android:paddingEnd="@dimen/padding_end_version"
             android:textColor="@color/text_version_number"
             android:textSize="@dimen/text_extra_small"
+            app:designVersion="@{design.version}"
             tools:text="V3" />
 
         <TextView
@@ -62,11 +74,11 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/version_text"
             android:layout_marginStart="@dimen/margin_extra_small"
-            app:uploadedDate="@{design.uploadedAt}"
             android:layout_toEndOf="@id/version_text"
             android:fontFamily="@font/roboto"
             android:textColor="@color/text_uploaded_date"
             android:textSize="@dimen/text_small"
+            app:uploadedDate="@{design.uploadedAt}"
             tools:text="Uploaded On: 12 Nov, 21 02:58Pm" />
 
         <ImageButton
