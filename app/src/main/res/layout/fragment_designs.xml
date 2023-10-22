@@ -86,13 +86,19 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/design_sections_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingVertical="@dimen/padding_small"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/list_item_section" />
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            android:id="@+id/design_sections_recycler"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:clipToPadding="false"-->
+        <!--            android:paddingVertical="@dimen/padding_small"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+        <!--            tools:listitem="@layout/list_item_section" />-->
+
+        <com.psh.assignment.util.downloader.DownloadProgressIndicatorView
+            android:id="@+id/progress_indicator"
+            android:layout_width="120dp"
+            android:layout_height="120dp" />
     </LinearLayout>
 </layout>

@@ -26,7 +26,6 @@ class DesignAdapter(private val onClickListener: OnClickListener) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(design: Design) {
             binding.design = design
-            Log.e("designAdapter", design.name)
             binding.executePendingBindings()
         }
     }

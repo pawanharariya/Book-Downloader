@@ -1,4 +1,4 @@
-package com.psh.assignment.util
+package com.psh.assignment.util.downloader
 
 import android.app.DownloadManager
 import android.content.Context
@@ -17,5 +17,9 @@ class FileDownloader(context: Context) : Downloader {
                 fileName
             )
         return downloadManager.enqueue(downloadRequest)
+    }
+
+    override fun cancelDownload(requestId: Long): Int {
+        return downloadManager.remove(requestId)
     }
 }

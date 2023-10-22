@@ -12,7 +12,7 @@ class DownloadBroadcastReceiver : BroadcastReceiver() {
         if (intent?.action == "android.intent.action.DOWNLOAD_COMPLETE") {
             val id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
             if (id != -1L) {
-                println("Download with ID $id finished")
+//                println("Download with ID $id finished")
             }
         }
     }

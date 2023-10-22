@@ -15,4 +15,6 @@
     <string name="cd_image_icon">Image Icon</string>
     <string name="cd_dxf_icon">DXF Icon</string>
     <string name="cd_design_item_options">Options</string>
+    <string name="cd_cancel_download">Cancel Download</string>
+    <string name="cd_download_completed_icon">Download Completed Icon</string>
 </resources>
