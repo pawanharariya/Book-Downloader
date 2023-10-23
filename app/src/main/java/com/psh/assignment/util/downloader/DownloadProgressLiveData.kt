@@ -8,7 +8,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
@@ -58,7 +57,6 @@ class DownloadProgressLiveData(private val context: Context, private val request
                     cancel()
                 }
                 cursor.close()
-                delay(300)
             }
         }
     }
@@ -72,4 +70,6 @@ class DownloadProgressLiveData(private val context: Context, private val request
 
 data class DownloadItem(
     val bytesDownloadedSoFar: Long = 0, val totalSizeBytes: Long = -1, val status: Int
-)
+) {
+    fun getProgress(): Int = ((bytesDownloadedSoFar * 100L) / totalSizeBytes).toInt()
+}

@@ -17,4 +17,8 @@
     <string name="cd_design_item_options">Options</string>
     <string name="cd_cancel_download">Cancel Download</string>
     <string name="cd_download_completed_icon">Download Completed Icon</string>
+
+    <!--    Snackbar messages-->
+    <string name="mime_type_invalid">Cannot identify the file type</string>
+    <string name="failed_to_load">Failed to load data</string>
 </resources>

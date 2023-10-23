@@ -9,7 +9,7 @@ data class Section(
     /**
      * List of design layouts that belong to the section
      */
-    val designList: List<Design>,
+    var designList: List<Design>,
 
     /**
      * State of section - Expanded or Collapsed

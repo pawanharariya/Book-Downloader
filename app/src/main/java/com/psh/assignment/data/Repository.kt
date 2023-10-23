@@ -14,7 +14,7 @@ class Repository @Inject constructor(private val remoteAPI: RemoteAPI) {
 
     suspend fun getDesign() {
         val result = remoteAPI.getDesigns()
-        if (result.code == 200) {
+        if (result.success) {
             _designs.postValue(result.data)
         }
     }

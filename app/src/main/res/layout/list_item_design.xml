@@ -32,7 +32,7 @@
             android:layout_alignTop="@id/design_type_image"
             android:layout_marginStart="@dimen/margin_small"
             android:layout_marginEnd="@dimen/margin_small"
-            android:layout_toStartOf="@id/download_progress"
+            android:layout_toStartOf="@id/download_progress_view"
             android:layout_toEndOf="@+id/design_type_image"
             android:ellipsize="end"
             android:fontFamily="@font/gilroy_semi_bold"
@@ -42,8 +42,8 @@
             android:textSize="@dimen/text_large"
             tools:text="2D Electrical wiring plan" />
 
-        <View
-            android:id="@+id/download_progress"
+        <com.psh.assignment.util.downloader.DownloadProgressIndicatorView
+            android:id="@+id/download_progress_view"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_centerVertical="true"

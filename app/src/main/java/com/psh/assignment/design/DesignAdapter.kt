@@ -1,6 +1,5 @@
 package com.psh.assignment.design
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -9,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.psh.assignment.data.model.Design
 import com.psh.assignment.databinding.ListItemDesignBinding
 
-class DesignAdapter(private val onClickListener: OnClickListener) :
+class DesignAdapter(
+    private val onClickListener: DesignItemClickListener
+) :
     ListAdapter<Design, DesignAdapter.DesignViewHolder>(DiffCallBack) {
 
     companion object DiffCallBack : DiffUtil.ItemCallback<Design>() {
@@ -26,6 +27,9 @@ class DesignAdapter(private val onClickListener: OnClickListener) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(design: Design) {
             binding.design = design
+            binding.root.setOnClickListener {
+                onClickListener.onDesignItemClick(design)
+            }
             binding.executePendingBindings()
         }
     }
@@ -38,13 +42,10 @@ class DesignAdapter(private val onClickListener: OnClickListener) :
 
     override fun onBindViewHolder(holder: DesignViewHolder, position: Int) {
         val design = getItem(position)
-        holder.itemView.setOnClickListener {
-            onClickListener.onClick(design)
-        }
         holder.bind(design)
     }
 
-    class OnClickListener(val clickListener: (design: Design) -> Unit) {
-        fun onClick(design: Design) = clickListener(design)
+    interface DesignItemClickListener {
+        fun onDesignItemClick(designItem: Design)
     }
 }
