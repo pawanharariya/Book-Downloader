@@ -41,7 +41,8 @@ class DownloadProgressIndicatorView @JvmOverloads constructor(
         cancelIcon.visibility = View.INVISIBLE
     }
 
-    fun onProgressComplete() {
+    fun progressComplete() {
+        progressBar.visibility = View.VISIBLE
         progressBar.progress = 100
         completeIcon.visibility = View.VISIBLE
         cancelIcon.visibility = View.INVISIBLE

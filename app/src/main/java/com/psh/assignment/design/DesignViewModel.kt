@@ -1,6 +1,7 @@
 package com.psh.assignment.design
 
 import android.app.Application
+import android.app.DownloadManager
 import android.webkit.MimeTypeMap
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -36,13 +37,22 @@ class DesignViewModel @Inject constructor(
             ?: listOf()
     } as MutableLiveData<List<Section>>
 
+    /**
+     * Hashmap to store downloadProgressObservers against design id
+     */
+    val progressLiveDataMap = MutableLiveData<HashMap<String, DownloadProgressLiveData>>()
+
     init {
         viewModelScope.launch {
             repository.getDesign()
         }
+
+        progressLiveDataMap.value = HashMap()
     }
 
     fun downloadFileAttached(design: Design) {
+        if (isDownloadingAlready(design.id))
+            return
         val url = design.file
         val fileName = url.substring(url.lastIndexOf('/') + 1)
         val mimeType = getMimeFromFileName(fileName)
@@ -53,11 +63,25 @@ class DesignViewModel @Inject constructor(
         val requestId = FileDownloader(application.applicationContext).downloadFile(
             url, mimeType, fileName
         )
-        attachProgressObserver(requestId)
+        design.downloadRequestId = requestId
+        attachProgressObserver(design.id, requestId)
     }
 
-    private fun attachProgressObserver(requestId: Long) {
-        val progress = DownloadProgressLiveData(application.applicationContext, requestId)
+    private fun isDownloadingAlready(id: String): Boolean {
+        return progressLiveDataMap.value?.get(id)?.value?.status == DownloadManager.STATUS_RUNNING
+    }
+
+    private fun attachProgressObserver(designId: String, requestId: Long) {
+        val hashMap = progressLiveDataMap.value
+        hashMap?.set(designId, DownloadProgressLiveData(application.applicationContext, requestId))
+        progressLiveDataMap.value = progressLiveDataMap.value
+    }
+
+    fun cancelDownload(designId: String) {
+        val requestId = progressLiveDataMap.value?.get(designId)?.requestId
+        requestId?.let {
+            FileDownloader(application.applicationContext).cancelDownload(requestId)
+        }
     }
 
     private fun getMimeFromFileName(fileName: String): String? {
@@ -70,6 +94,5 @@ class DesignViewModel @Inject constructor(
         _snackbarText.value = Event(message)
     }
 }
-
 
 

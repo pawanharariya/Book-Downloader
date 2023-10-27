@@ -44,10 +44,10 @@
 
         <com.psh.assignment.util.downloader.DownloadProgressIndicatorView
             android:id="@+id/download_progress_view"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="@dimen/progress_indicator_dimen"
+            android:layout_height="@dimen/progress_indicator_dimen"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_extra_small"
             android:layout_toStartOf="@id/option_button" />
 
         <TextView
@@ -87,7 +87,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/margin_extra_small"
             android:backgroundTint="@android:color/transparent"
             android:contentDescription="@string/cd_design_item_options"
             android:src="@drawable/ic_options" />

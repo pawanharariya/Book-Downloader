@@ -1,6 +1,5 @@
 package com.psh.assignment.data.model
 
-import com.psh.assignment.util.downloader.DownloadItem
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -15,5 +14,5 @@ data class Design(
     @Json(name = "uploaded_at")
     val uploadedAt: String,
     @Transient
-    var downloadItem: DownloadItem? = null
+    var downloadRequestId: Long? = null
 )

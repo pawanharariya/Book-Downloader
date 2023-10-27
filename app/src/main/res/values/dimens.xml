@@ -27,10 +27,10 @@
     <dimen name="design_item_recycler_divider_height">6dp</dimen>
 
     <!--Download Progress Indicator View -->
-    <dimen name="progress_indicator_dimen">18dp</dimen>
+    <dimen name="progress_indicator_dimen">27dp</dimen>
     <dimen name="progress_indicator_thickness">2dp</dimen>
     <dimen name="download_cancel_icon_padding">4dp</dimen>
-    <dimen name="download_complete_icon_padding">3dp</dimen>
+    <dimen name="download_complete_icon_padding">4dp</dimen>
 
     <dimen name="title_card_elevation">8dp</dimen>
     <dimen name="separator_height">12dp</dimen>
