@@ -16,33 +16,7 @@
         android:visibility="invisible" />
 
     <ImageView
-        android:id="@+id/can00000000000000000.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        -el_icon"
+        android:id="@+id/cancel_icon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
