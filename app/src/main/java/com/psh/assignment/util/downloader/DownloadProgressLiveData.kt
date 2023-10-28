@@ -3,7 +3,6 @@ package com.psh.assignment.util.downloader
 import android.annotation.SuppressLint
 import android.app.DownloadManager
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.LiveData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -37,7 +36,6 @@ class DownloadProgressLiveData(
                 val cursor = downloadManager.query(query)
                 if (cursor.moveToFirst()) {
                     val status = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS))
-                    Log.e("Progress","Inside coroutine status : $status")
                     when (status) {
                         DownloadManager.STATUS_SUCCESSFUL,
                         DownloadManager.STATUS_PENDING,
@@ -64,11 +62,6 @@ class DownloadProgressLiveData(
                 cursor.close()
             }
         }
-    }
-
-    override fun onInactive() {
-        super.onInactive()
-//        job.cancel()
     }
 
 }

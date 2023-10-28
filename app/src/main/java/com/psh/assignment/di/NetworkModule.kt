@@ -1,5 +1,7 @@
 package com.psh.assignment.di
 
+import android.app.Application
+import android.app.DownloadManager
 import com.psh.assignment.data.remote.RemoteAPI
 import com.psh.assignment.util.Constants
 import com.squareup.moshi.Moshi
@@ -30,4 +32,11 @@ class NetworkModule {
     fun providesRemoteAPI(retrofit: Retrofit): RemoteAPI {
         return retrofit.create(RemoteAPI::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun providesDownloadManager(application: Application): DownloadManager {
+        return application.applicationContext.getSystemService(DownloadManager::class.java)
+    }
+
 }

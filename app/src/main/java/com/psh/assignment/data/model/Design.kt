@@ -12,7 +12,5 @@ data class Design(
     val file: String = "",
     val version: Int = 1,
     @Json(name = "uploaded_at")
-    val uploadedAt: String,
-    @Transient
-    var downloadRequestId: Long? = null
+    val uploadedAt: String
 )

@@ -2,7 +2,6 @@ package com.psh.assignment.design
 
 import android.app.DownloadManager
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,11 +48,9 @@ class DesignFragment : Fragment(), DesignAdapter.DesignItemListener {
         downloadProgressListener: DownloadProgressListener,
         designId: String
     ) {
-        Log.e("Progress", "Inside Design Download Observe")
         viewModel.progressLiveDataMap.observe(viewLifecycleOwner) {
             it?.let {
                 it[designId]?.observe(viewLifecycleOwner) { downloadItem ->
-                    Log.e("Progress", "Status = ${downloadItem.status.toString()}")
                     when (downloadItem.status) {
                         DownloadManager.STATUS_RUNNING ->
                             downloadProgressListener.onProgressUpdate(downloadItem.getProgress())

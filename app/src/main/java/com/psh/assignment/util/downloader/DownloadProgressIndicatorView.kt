@@ -34,6 +34,7 @@ class DownloadProgressIndicatorView @JvmOverloads constructor(
     private fun startProgress() {
         progressBar.visibility = View.VISIBLE
         cancelIcon.visibility = View.VISIBLE
+        completeIcon.visibility = View.INVISIBLE
     }
 
     fun cancelProgress() {

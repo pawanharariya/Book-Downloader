@@ -21,7 +21,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DesignViewModel @Inject constructor(
-    private val repository: Repository, private val application: Application
+    private val repository: Repository,
+    private val application: Application,
+    private val fileDownloader: FileDownloader
 ) : AndroidViewModel(application) {
 
     private val designs: LiveData<List<Design>>
@@ -51,8 +53,7 @@ class DesignViewModel @Inject constructor(
     }
 
     fun downloadFileAttached(design: Design) {
-        if (isDownloadingAlready(design.id))
-            return
+        if (isDownloadingAlready(design.id)) return
         val url = design.file
         val fileName = url.substring(url.lastIndexOf('/') + 1)
         val mimeType = getMimeFromFileName(fileName)
@@ -60,13 +61,11 @@ class DesignViewModel @Inject constructor(
             showSnackbarMessage(R.string.mime_type_invalid)
             return
         }
-        val requestId = FileDownloader(application.applicationContext).downloadFile(
-            url, mimeType, fileName
-        )
-        design.downloadRequestId = requestId
+        val requestId = fileDownloader.downloadFile(url, mimeType, fileName)
         attachProgressObserver(design.id, requestId)
     }
 
+    // prevents downloads in-case of multiple clicks
     private fun isDownloadingAlready(id: String): Boolean {
         return progressLiveDataMap.value?.get(id)?.value?.status == DownloadManager.STATUS_RUNNING
     }
@@ -80,7 +79,7 @@ class DesignViewModel @Inject constructor(
     fun cancelDownload(designId: String) {
         val requestId = progressLiveDataMap.value?.get(designId)?.requestId
         requestId?.let {
-            FileDownloader(application.applicationContext).cancelDownload(requestId)
+            fileDownloader.cancelDownload(requestId)
         }
     }
 

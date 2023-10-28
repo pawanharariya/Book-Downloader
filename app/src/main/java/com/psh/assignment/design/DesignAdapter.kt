@@ -31,7 +31,6 @@ class DesignAdapter(
             binding.root.setOnClickListener {
                 itemListener.onDesignItemClick(design)
             }
-            Log.e("Progress","Inside View Holder bind")
             itemListener.onDesignDownloadObserve(this, design.id)
             binding.downloadProgressView.setOnClickListener {
                 itemListener.onDesignDownloadCancel(design.id)
