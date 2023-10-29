@@ -7,5 +7,6 @@ data class Response(
     val code: Int,
     val message: String,
     val success: Boolean,
-    val data: List<Design>
+    val data: List<Design>,
+    val errors: String?
 )
