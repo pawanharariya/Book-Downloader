@@ -4,10 +4,10 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class Design(
+data class Book(
     val id: String,
     var name: String,
-    val type: DesignType,
+    val type: BookType,
     val section: SectionType,
     val file: String = "",
     val version: Int = 1,

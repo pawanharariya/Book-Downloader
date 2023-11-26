@@ -1,4 +1,4 @@
-package com.psh.assignment.design
+package com.psh.assignment.ui
 
 import android.app.Application
 import android.app.DownloadManager
@@ -11,7 +11,7 @@ import com.psh.assignment.Event
 import com.psh.assignment.R
 import com.psh.assignment.data.Repository
 import com.psh.assignment.data.Result
-import com.psh.assignment.data.model.Design
+import com.psh.assignment.data.model.Book
 import com.psh.assignment.data.model.Section
 import com.psh.assignment.data.succeeded
 import com.psh.assignment.util.downloader.DownloadProgressLiveData
@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DesignViewModel @Inject constructor(
+class BookViewModel @Inject constructor(
     private val repository: Repository,
     private val application: Application,
     private val fileDownloader: FileDownloader
@@ -31,7 +31,7 @@ class DesignViewModel @Inject constructor(
     val snackbarText: LiveData<Event<String>> = _snackbarText
 
     /**
-     * Transforms designs LiveData and segregates them based on their section
+     * Transforms books LiveData and segregates them based on their section
      */
     var sections = MutableLiveData<List<Section>>()
 
@@ -53,7 +53,7 @@ class DesignViewModel @Inject constructor(
         progressLiveDataMap.value = HashMap()
     }
 
-    private fun handleResult(result: Result<List<Design>>) {
+    private fun handleResult(result: Result<List<Book>>) {
         if (result.succeeded) {
             val designs = result.data
             sections.postValue(
@@ -63,9 +63,9 @@ class DesignViewModel @Inject constructor(
         } else result.message?.let { showSnackbarMessage(it) }
     }
 
-    fun downloadFileAttached(design: Design) {
-        if (isDownloadingAlready(design.id)) return
-        val url = design.file
+    fun downloadFileAttached(book: Book) {
+        if (isDownloadingAlready(book.id)) return
+        val url = book.file
         val fileName = url.substring(url.lastIndexOf('/') + 1)
         val mimeType = getMimeFromFileName(fileName)
         if (mimeType == null) {
@@ -73,7 +73,7 @@ class DesignViewModel @Inject constructor(
             return
         }
         val requestId = fileDownloader.downloadFile(url, mimeType, fileName)
-        attachProgressObserver(design.id, requestId)
+        attachProgressObserver(book.id, requestId)
     }
 
     // prevents downloads in-case of multiple clicks

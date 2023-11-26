@@ -3,7 +3,7 @@ package com.psh.assignment.data.model
 import com.psh.assignment.R
 import com.squareup.moshi.Json
 
-enum class DesignType(val imageResource: Int) {
+enum class BookType(val imageResource: Int) {
     @Json(name = "DOC")
     DOC(R.drawable.ic_doc),
 

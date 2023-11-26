@@ -9,7 +9,7 @@ data class Section(
     /**
      * List of design layouts that belong to the section
      */
-    var designList: List<Design>,
+    var bookList: List<Book>,
 
     /**
      * State of section - Expanded or Collapsed

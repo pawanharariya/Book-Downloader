@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:background="@color/bg_default"
         android:orientation="vertical"
-        tools:context=".design.DesignFragment">
+        tools:context=".ui.BookFragment">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/title_layout"
@@ -28,18 +28,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/gilroy_bold"
-                    android:text="@string/title_design_layout"
+                    android:text="@string/title_books"
                     android:textSize="@dimen/text_large"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/client_label"
+                    android:id="@+id/sub_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/gilroy_regular"
                     android:text="@string/client"
-                    android:textAllCaps="true"
                     app:layout_constraintStart_toStartOf="@id/title"
                     app:layout_constraintTop_toBottomOf="@id/title" />
 
@@ -48,15 +47,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_extra_small"
+                    android:visibility="invisible"
                     android:fontFamily="@font/gilroy_semi_bold"
-                    app:layout_constraintStart_toEndOf="@id/client_label"
-                    app:layout_constraintTop_toTopOf="@id/client_label"
+                    app:layout_constraintStart_toEndOf="@id/sub_title"
+                    app:layout_constraintTop_toTopOf="@id/sub_title"
                     android:text="Bridgestone" />
 
                 <View
                     android:id="@+id/separator"
                     android:layout_width="@dimen/separator_width"
                     android:layout_height="@dimen/separator_height"
+                    android:visibility="invisible"
                     android:layout_marginHorizontal="@dimen/margin_small"
                     android:background="@color/separator"
                     app:layout_constraintBottom_toBottomOf="@id/client_text"
@@ -67,17 +68,19 @@
                     android:id="@+id/job_id_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginStart="@dimen/margin_small"
                     android:fontFamily="@font/gilroy_regular"
                     android:text="@string/job_id"
                     android:textAllCaps="true"
                     app:layout_constraintStart_toEndOf="@id/separator"
-                    app:layout_constraintTop_toTopOf="@id/client_label" />
+                    app:layout_constraintTop_toTopOf="@id/sub_title" />
 
                 <TextView
                     android:id="@+id/job_id_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:layout_marginStart="@dimen/margin_extra_small"
                     android:fontFamily="@font/gilroy_semi_bold"
                     app:layout_constraintStart_toEndOf="@id/job_id_label"

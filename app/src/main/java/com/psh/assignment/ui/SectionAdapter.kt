@@ -1,4 +1,4 @@
-package com.psh.assignment.design
+package com.psh.assignment.ui
 
 import android.animation.ObjectAnimator
 import android.view.LayoutInflater
@@ -13,7 +13,7 @@ import com.psh.assignment.data.model.Section
 import com.psh.assignment.databinding.ListItemSectionBinding
 
 class SectionAdapter(
-    private val designItemListener: DesignAdapter.DesignItemListener
+    private val designItemListener: BookAdapter.DesignItemListener
 ) : ListAdapter<Section, SectionAdapter.SectionViewHolder>(DiffCallBack) {
 
     companion object DiffCallBack : DiffUtil.ItemCallback<Section>() {
@@ -30,15 +30,15 @@ class SectionAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(section: Section) {
             val resources = binding.root.resources
-            val designAdapter = DesignAdapter(designItemListener)
+            val bookAdapter = BookAdapter(designItemListener)
             val designRecycler = binding.designRecycler
             designRecycler.apply {
                 setHasFixedSize(true)
-                adapter = designAdapter
-                addItemDecoration(DesignItemDecorator(resources.getDimensionPixelSize(R.dimen.design_item_recycler_divider_height)))
+                adapter = bookAdapter
+                addItemDecoration(BookItemDecorator(resources.getDimensionPixelSize(R.dimen.design_item_recycler_divider_height)))
                 visibility = if (section.isExpanded) View.VISIBLE else View.GONE
             }
-            designAdapter.submitList(section.designList)
+            bookAdapter.submitList(section.bookList)
             val expandSectionButton = binding.expandSectionButton
             rotateDropDown(expandSectionButton, section.isExpanded)
             binding.root.setOnClickListener {

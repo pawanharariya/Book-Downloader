@@ -1,39 +1,38 @@
-package com.psh.assignment.design
+package com.psh.assignment.ui
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.psh.assignment.data.model.Design
-import com.psh.assignment.databinding.ListItemDesignBinding
+import com.psh.assignment.data.model.Book
+import com.psh.assignment.databinding.ListItemBookBinding
 import com.psh.assignment.util.downloader.DownloadProgressListener
 
-class DesignAdapter(
+class BookAdapter(
     private val itemListener: DesignItemListener
-) : ListAdapter<Design, DesignAdapter.DesignViewHolder>(DiffCallBack) {
+) : ListAdapter<Book, BookAdapter.DesignViewHolder>(DiffCallBack) {
 
-    companion object DiffCallBack : DiffUtil.ItemCallback<Design>() {
-        override fun areItemsTheSame(oldItem: Design, newItem: Design): Boolean {
+    companion object DiffCallBack : DiffUtil.ItemCallback<Book>() {
+        override fun areItemsTheSame(oldItem: Book, newItem: Book): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Design, newItem: Design): Boolean {
+        override fun areContentsTheSame(oldItem: Book, newItem: Book): Boolean {
             return oldItem == newItem
         }
     }
 
-    inner class DesignViewHolder(private val binding: ListItemDesignBinding) :
+    inner class DesignViewHolder(private val binding: ListItemBookBinding) :
         RecyclerView.ViewHolder(binding.root), DownloadProgressListener {
-        fun bind(design: Design) {
-            binding.design = design
+        fun bind(book: Book) {
+            binding.design = book
             binding.root.setOnClickListener {
-                itemListener.onDesignItemClick(design)
+                itemListener.onDesignItemClick(book)
             }
-            itemListener.onDesignDownloadObserve(this, design.id)
+            itemListener.onDesignDownloadObserve(this, book.id)
             binding.downloadProgressView.setOnClickListener {
-                itemListener.onDesignDownloadCancel(design.id)
+                itemListener.onDesignDownloadCancel(book.id)
             }
             binding.executePendingBindings()
         }
@@ -53,7 +52,7 @@ class DesignAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DesignViewHolder {
         return DesignViewHolder(
-            ListItemDesignBinding.inflate(LayoutInflater.from(parent.context))
+            ListItemBookBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
 
@@ -63,7 +62,7 @@ class DesignAdapter(
     }
 
     interface DesignItemListener {
-        fun onDesignItemClick(designItem: Design)
+        fun onDesignItemClick(bookItem: Book)
         fun onDesignDownloadObserve(
             downloadProgressListener: DownloadProgressListener,
             designId: String

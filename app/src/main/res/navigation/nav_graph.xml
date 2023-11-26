@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/designsFragment">
+    app:startDestination="@id/bookFragment">
 
     <fragment
-        android:id="@+id/designsFragment"
-        android:name="com.psh.assignment.design.DesignFragment"
+        android:id="@+id/bookFragment"
+        android:name="com.psh.assignment.ui.BookFragment"
         android:label="fragment_designs"
-        tools:layout="@layout/fragment_designs" />
+        tools:layout="@layout/fragment_book" />
 </navigation>

@@ -1,10 +1,10 @@
-package com.psh.assignment.design
+package com.psh.assignment.ui
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.psh.assignment.data.model.DesignType
+import com.psh.assignment.data.model.BookType
 import com.psh.assignment.data.model.SectionType
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -33,8 +33,8 @@ fun bindSectionTitle(titleTextView: TextView, sectionType: SectionType) {
 }
 
 @BindingAdapter("designImage")
-fun bindDesignImage(designImage: ImageView, designType: DesignType) {
-    designImage.setImageResource(designType.imageResource)
+fun bindDesignImage(designImage: ImageView, bookType: BookType) {
+    designImage.setImageResource(bookType.imageResource)
 }
 
 @BindingAdapter("designVersion")
@@ -61,7 +61,7 @@ fun formatDate(dateString: String): String {
     val parserFormat =
         SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.getDefault())
     val convertFormat =
-        SimpleDateFormat("dd MMM, yy hh:mma", Locale.getDefault())
+        SimpleDateFormat("dd MMM, yy", Locale.getDefault())
     val date: Date?
     try {
         date = parserFormat.parse(dateString)

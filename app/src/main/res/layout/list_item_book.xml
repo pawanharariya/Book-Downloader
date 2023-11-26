@@ -7,7 +7,7 @@
 
         <variable
             name="design"
-            type="com.psh.assignment.data.model.Design" />
+            type="com.psh.assignment.data.model.Book" />
     </data>
 
     <RelativeLayout
@@ -85,6 +85,7 @@
             android:id="@+id/option_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="invisible"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:backgroundTint="@android:color/transparent"

@@ -1,6 +1,6 @@
 package com.psh.assignment.util
 
 object Constants {
-    const val BASE_URL = "https://n8n.rdash.io/"
-    const val ENDPOINT_DESIGN = "webhook/223a7fe0-4e32-4414-aacf-1bc0ab1c0bba"
+    const val BASE_URL =
+        "https://gist.githubusercontent.com/pawanharariya/447509c6342302ea21b2652b6ba3f98e/raw/"
 }

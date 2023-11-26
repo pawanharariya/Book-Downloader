@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Assignment</string>
+    <string name="app_name">Book Downloader</string>
 
     <!--    Section Titles -->
-    <string name="section_title_2d">2D Layout/ Adaptation</string>
-    <string name="section_title_3d">3D Layout/ Adaptation</string>
-    <string name="section_title_prod">Production Files/ Artworks</string>
+    <string name="section_title_scifi">Sci-Fi</string>
+    <string name="section_title_space">Space</string>
+    <string name="section_title_tech">Technology</string>
 
-    <string name="title_design_layout">Design Layouts</string>
-    <string name="client">Client</string>
+    <string name="title_books">Latest Books</string>
+    <string name="client">Download latest books from various domains</string>
     <string name="job_id">Job Id</string>
 
     <!--    Content Descriptions -->

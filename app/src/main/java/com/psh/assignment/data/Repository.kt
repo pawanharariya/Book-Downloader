@@ -8,7 +8,7 @@ import android.net.NetworkCapabilities.TRANSPORT_ETHERNET
 import android.net.NetworkCapabilities.TRANSPORT_WIFI
 import com.psh.assignment.data.Result.Error
 import com.psh.assignment.data.Result.Success
-import com.psh.assignment.data.model.Design
+import com.psh.assignment.data.model.Book
 import com.psh.assignment.data.remote.RemoteAPI
 import javax.inject.Inject
 
@@ -16,12 +16,12 @@ class Repository @Inject constructor(
     private val remoteAPI: RemoteAPI,
     private val application: Application
 ) {
-    suspend fun getDesign(): Result<List<Design>> {
+    suspend fun getDesign(): Result<List<Book>> {
         if (!hasInternetConnection()) {
             return Error("No Internet Connection!")
         }
         return try {
-            val response = remoteAPI.getDesigns()
+            val response = remoteAPI.getBooks()
             if (response.success) {
                 Success(response.data)
             } else Error(response.errors)

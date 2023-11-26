@@ -1,4 +1,4 @@
-package com.psh.assignment.design
+package com.psh.assignment.ui
 
 import android.app.DownloadManager
 import android.os.Bundle
@@ -10,21 +10,21 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.psh.assignment.R
-import com.psh.assignment.data.model.Design
-import com.psh.assignment.databinding.FragmentDesignsBinding
+import com.psh.assignment.data.model.Book
+import com.psh.assignment.databinding.FragmentBookBinding
 import com.psh.assignment.util.downloader.DownloadProgressListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DesignFragment : Fragment(), DesignAdapter.DesignItemListener {
-    private lateinit var viewModel: DesignViewModel
-    private lateinit var binding: FragmentDesignsBinding
+class BookFragment : Fragment(), BookAdapter.DesignItemListener {
+    private lateinit var viewModel: BookViewModel
+    private lateinit var binding: FragmentBookBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_designs, container, false)
-        viewModel = ViewModelProvider(this)[DesignViewModel::class.java]
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_book, container, false)
+        viewModel = ViewModelProvider(this)[BookViewModel::class.java]
         val sectionAdapter = SectionAdapter(this)
         binding.designSectionsRecycler.adapter = sectionAdapter
         viewModel.sections.observe(viewLifecycleOwner) {
@@ -40,8 +40,8 @@ class DesignFragment : Fragment(), DesignAdapter.DesignItemListener {
         return binding.root
     }
 
-    override fun onDesignItemClick(designItem: Design) {
-        viewModel.downloadFileAttached(designItem)
+    override fun onDesignItemClick(bookItem: Book) {
+        viewModel.downloadFileAttached(bookItem)
     }
 
     override fun onDesignDownloadObserve(

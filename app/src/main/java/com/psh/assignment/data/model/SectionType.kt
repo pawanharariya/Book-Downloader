@@ -4,12 +4,12 @@ import com.psh.assignment.R
 import com.squareup.moshi.Json
 
 enum class SectionType(val titleResourceId: Int) {
-    @Json(name = "2D")
-    TYPE_2D(R.string.section_title_2d),
+    @Json(name = "SCIFI")
+    SCIFI(R.string.section_title_scifi),
 
-    @Json(name = "3D")
-    TYPE_3D(R.string.section_title_3d),
+    @Json(name = "TECH")
+    TECH(R.string.section_title_space),
 
-    @Json(name = "PROD")
-    TYPE_PROD(R.string.section_title_prod);
+    @Json(name = "SPACE")
+    SPACE(R.string.section_title_tech);
 }

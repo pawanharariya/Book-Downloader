@@ -39,7 +39,7 @@
             android:paddingHorizontal="4dp"
             android:textColor="@color/text_file_count"
             android:visibility="invisible"
-            app:fileCount="@{section.designList.size()}"
+            app:fileCount="@{section.bookList.size()}"
             tools:text="5 Files"
             tools:visibility="visible" />
 
@@ -62,6 +62,6 @@
             android:layout_marginTop="@dimen/margin_normal"
             android:nestedScrollingEnabled="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/list_item_design" />
+            tools:listitem="@layout/list_item_book" />
     </RelativeLayout>
 </layout>

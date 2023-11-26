@@ -1,10 +1,10 @@
-package com.psh.assignment.design
+package com.psh.assignment.ui
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class DesignItemDecorator(private val spaceSize: Int) : RecyclerView.ItemDecoration() {
+class BookItemDecorator(private val spaceSize: Int) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(
         outRect: Rect, view: View,
         parent: RecyclerView,
