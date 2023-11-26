@@ -5,7 +5,7 @@ network about books. The pdf file attached with each book can be downloaded.
 
 ## App Preview ##
 
-<img src="./data/preview1.jpeg alt="App Preview" width=350/> <img src="./data/preview2.jpeg" alt = "App Preview" width=350/> 
+<img src="./data/preview1.jpeg" alt="App Preview" width=350/> <img src="./data/preview2.jpeg" alt = "App Preview" width=350/> 
 
 ## Tech Stack and Features ##
 
